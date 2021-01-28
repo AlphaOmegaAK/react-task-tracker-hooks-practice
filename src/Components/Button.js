@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 
 const Button = ({ color, text, onClick }) => {
-  // == If not added to Props
-  // const onClickFunc = () => {
-  //   console.log("Click");
-  // }
+
 
 
   return (<button className="btn" onClick={onClick} style={{ backgroundColor: color }}>
