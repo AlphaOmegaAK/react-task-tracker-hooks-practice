@@ -39,7 +39,11 @@ function App() {
   
     const toggleReminder = (id) => {
       console.log(id);
-    
+      setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task))
+
+      /* tasks in our state map through for each (task). where the task.id is the passed in id ? then spread across(...task) all task properties but change the reminder (,reminder) to opposite of what it is,: else do nothing
+
+      */
   }
     
 
