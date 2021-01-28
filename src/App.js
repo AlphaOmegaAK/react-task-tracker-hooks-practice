@@ -25,14 +25,22 @@ function App() {
     }
   ]); // GLOBAL State
 
+// Delete Task
+const deleteTask = (id) => {
+  console.log('delete', id);
+  // the actual button is in Task component, which is in Tasks Component -> so you want to pass it to TASKS as a prop
+  // ! App > Tasks > Task all get onDelete as Props
+}
+
   return (
     <div className="container">
       <Header title="Task Tracker"/> 
-      <Tasks tasks={tasks}/>
+      <Tasks tasks={ tasks } onDelete={ deleteTask }/>
 
     
     </div>
   );
 }
+
 
 export default App;
