@@ -27,15 +27,20 @@ function App() {
 
 // Delete Task
 const deleteTask = (id) => {
-  console.log('delete', id);
-  // the actual button is in Task component, which is in Tasks Component -> so you want to pass it to TASKS as a prop
-  // ! App > Tasks > Task all get onDelete as Props
+  // working with immutable state
+  // don't show task if the id that was click UI removal
+  setTasks(tasks.filter((task) => task.id !== id))
+
+
+  // console.log('delete', id);
+  // // the actual button is in Task component, which is in Tasks Component -> so you want to pass it to TASKS as a prop
+  // // ! App > Tasks > Task all get onDelete as Props
 }
 
   return (
     <div className="container">
       <Header title="Task Tracker"/> 
-      <Tasks tasks={ tasks } onDelete={ deleteTask }/>
+      {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} /> ) : ("No Tasks To Show")}
 
     
     </div>
