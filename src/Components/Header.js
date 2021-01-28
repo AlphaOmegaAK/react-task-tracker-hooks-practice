@@ -1,24 +1,18 @@
-// Prop Types step 1
-import PropTypes from 'prop-types' 
 
-
-const Header = (props) => { // Or Destructured : Header = ({ title }) ...
+const Header = ({ title }) => { 
   return (
     <header>
-      <h1>{props.title}</h1>
+      <h1 style={{color: 'red', backgroundColor: 'black'}}>{ title } In Line Style</h1>
+      <h1 style={headingStyle}>{ title } as a Variable</h1>
+      <h2>{title}</h2>
       
     </header>
   )
 }
 
-// // Default Props
-// Header.defaultProps = {
-//   title: "Task Tracker",
-// }
-
-// Prop Types step 2
-Header.propTypes = {
-  title: PropTypes.string,
+const headingStyle = {
+  color: 'blue',
+  backgroundColor: 'black'
 }
 
 export default Header
