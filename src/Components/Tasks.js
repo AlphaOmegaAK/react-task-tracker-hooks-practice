@@ -26,7 +26,7 @@ const Tasks = () => {
   return (
     <>
     {/* Create a List using the map() method */}
-      {tasks.map((task) => (<h3>{task.text}</h3>))}
+      {tasks.map((task) => (<h3 key={task.id}>{task.text}</h3>))}
 
 
     </>
