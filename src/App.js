@@ -26,21 +26,27 @@ function App() {
   ]); // GLOBAL State
 
 // Delete Task
-const deleteTask = (id) => {
-  // working with immutable state
-  // don't show task if the id that was click UI removal
-  setTasks(tasks.filter((task) => task.id !== id))
+  const deleteTask = (id) => {
+    // working with immutable state
+    // don't show task if the id that was click UI removal
+    setTasks(tasks.filter((task) => task.id !== id))
 
+    // console.log('delete', id);
+    // // the actual button is in Task component, which is in Tasks Component -> so you want to pass it to TASKS as a prop
+    // // ! App > Tasks > Task all get onDelete as Props
+  }
 
-  // console.log('delete', id);
-  // // the actual button is in Task component, which is in Tasks Component -> so you want to pass it to TASKS as a prop
-  // // ! App > Tasks > Task all get onDelete as Props
-}
+  
+    const toggleReminder = (id) => {
+      console.log(id);
+    
+  }
+    
 
   return (
     <div className="container">
       <Header title="Task Tracker"/> 
-      {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} /> ) : ("No Tasks To Show")}
+      {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> ) : ("No Tasks To Show")}
 
     
     </div>
