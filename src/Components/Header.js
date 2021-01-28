@@ -1,24 +1,24 @@
-// Prop Types step 1
-import PropTypes from 'prop-types' 
+import PropTypes from 'prop-types';
+import Button from './Button';
 
-
-const Header = (props) => { // Or Destructured : Header = ({ title }) ...
+const Header = ({ title }) => { // Or Destructured : Header = ({ title }) ...
   return (
-    <header>
-      <h1>{props.title}</h1>
+    <header className="header">
+      <h1 style={ headingStyle }>{title}</h1>
+      <Button color="green" text="Hello"/>
       
     </header>
   )
 }
 
-// // Default Props
-// Header.defaultProps = {
-//   title: "Task Tracker",
-// }
-
-// Prop Types step 2
 Header.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired
 }
+
+
+const headingStyle = {
+  color: "blue",
+  backgroundColor: "black"
+};
 
 export default Header
